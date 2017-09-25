@@ -1,0 +1,21 @@
+.footer
+  background: $color-white
+  margin-top: ms(8)
+  margin-bottom: ms(-1) * -1
+  padding: ms(8) 0
+  text-align: center
+
+.footer__item
+  font-size: ms(2)
+  font-weight: 200
+  transition: color 0.3s
+  &:not(:last-child)
+    margin-bottom: ms(0)
+
+.footer__item--link
+  a
+    color: $color-black
+  &:hover
+    cursor: pointer
+    a
+      color: $color-blue-grey

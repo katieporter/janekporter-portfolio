@@ -1,0 +1,22 @@
+extends ./layout.pug
+
+block body
+  div.page-header.home-header
+    div.row.center-xs
+      div.col-xs-12
+        - var cleanTitle = PrismicDOM.RichText.asText(pageContent.data.title)
+        h1= cleanTitle
+          span.light-text
+            != PrismicDOM.RichText.asText(pageContent.data.bio)
+          span.accent-text .
+  div.row
+    for project in projects
+      a.col-xs-12.col-md-6.project-tile(data-wio-id=project.uid href='/project/' + project.uid)
+        div.project-tile__img-wrap
+          img(src=project.data.featured_image.url).project-tile__img
+        p.project-tile__tags #{project.tags.join(' + ')}
+        div.project-tile__title-wrap
+          h4.project-tile__name
+            != PrismicDOM.RichText.asText(project.data.project_name)
+          h2.project-tile__title
+            != PrismicDOM.RichText.asText(project.data.project_title)

@@ -3,10 +3,16 @@ extends ./layout.pug
 
 //- Create a block
 block body
-  div(data-wio-id=pageContent.id)
-   //- This is how to get an image into your template
-   img(src=pageContent.data.featured_image.url)
-   //- This is how to get a structured text into your template
-   != PrismicDOM.RichText.asHtml(pageContent.data.project_name, ctx.linkResolver)
-   != PrismicDOM.RichText.asHtml(pageContent.data.project_title, ctx.linkResolver)
-   != PrismicDOM.RichText.asHtml(pageContent.data.body, ctx.linkResolver)
+  div.row.center-xs
+    div(data-wio-id=pageContent.id).page-header.project-header.col-xs-12
+      p.project-header__tags #{pageContent.tags.join(' + ')}
+      div.project-header__title-wrap
+        h4.project-header__name
+          != PrismicDOM.RichText.asText(pageContent.data.project_name)
+        h1.project-header__title
+          != PrismicDOM.RichText.asText(pageContent.data.project_title)
+    if pageContent.data.banner_image
+      div.project-img
+        img(src=pageContent.data.banner_image.url)
+    div.project-body.col-xs-12.col-md-10.col-lg-8
+     != PrismicDOM.RichText.asHtml(pageContent.data.body, ctx.linkResolver)

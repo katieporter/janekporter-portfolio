@@ -1,0 +1,54 @@
+.project-tile:hover
+  cursor: pointer
+  .project-tile__img
+    opacity: 0.7
+  .project-tile__img-wrap:before
+      opacity: 0.025
+  .project-tile__name,
+  .project-tile__title,
+  .project-tile__tags
+    color: $color-blue-grey
+
+.project-tile__img-wrap
+  display: block
+  position: relative
+  &:before
+    content: ""
+    position: absolute
+    z-index: 1
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    background: $color-black
+    opacity: 0
+    transition: opacity 0.3s
+
+.project-tile__img
+  position: relative
+  opacity: 1
+  transition: opacity 0.3s
+
+.project-tile__tags
+  color: $color-blue
+  font-size: ms(-1)
+  font-weight: 600
+  text-transform: uppercase
+  margin-bottom: 0
+  transition: color 0.3s
+
+.project-tile__title-wrap
+  margin-top: ms(-3)
+  margin-bottom: ms(1)
+
+.project-tile__name,
+.project-tile__title
+  color: $color-black
+  display: inline
+  transition: color 0.3s
+
+.project-tile__name
+  @extend h2
+
+.project-tile__title
+  font-weight: 200

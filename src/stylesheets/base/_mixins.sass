@@ -1,0 +1,42 @@
+//
+// Mixins
+//
+
+// Animations
+=animation($animate...)
+  $max: length($animate)
+  $animations: ""
+
+  @for $i from 1 through $max
+    $animations: #{$animations + nth($animate, $i)}
+
+    @if $i < $max
+      $animations: #{$animations + ", "}
+
+  -webkit-animation: $animations
+  -moz-animation: $animations
+  -o-animation: $animations
+  animation: $animations
+
+// Keyframes
+=keyframes($animation-name)
+  @-webkit-keyframes #{$animation-name}
+    @content
+
+  @-moz-keyframes #{$animation-name}
+    @content
+
+  @-o-keyframes #{$animation-name}
+    @content
+
+  @keyframes #{$animation-name}
+    @content
+
+// Responsive
+=mobile
+  @media (max-width: #{$bp-md})
+    @content
+
+=tablet
+  @media (max-width: #{$bp-lg})
+    @content

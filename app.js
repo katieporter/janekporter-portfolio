@@ -32,17 +32,13 @@ app.use((req, res, next) => {
   });
 });
 
-/**
-* Route for homepage
-*/
-app.get(['/', '/projects'], (req, res) =>
-
-  // Query the homepage
-  req.prismic.api.getSingle("home").then(home => {
-
-    // If a document is returned...
-    if(home) {
-
+/*
+ * Homepage route
+ */
+app.get('/', (req, res, next) => {
+  req.prismic.api.getSingle("home")
+  .then((pageContent) => {
+    if (pageContent) {
       var queryOptions = {
         page: req.params.p || '1',
         orderings: '[my.project.date desc]'
@@ -50,23 +46,24 @@ app.get(['/', '/projects'], (req, res) =>
 
       // Query the projects
       return req.prismic.api.query(
-        prismic.Predicates.at("document.type", "project"),
+        Prismic.Predicates.at("document.type", "project"),
         queryOptions
       ).then(function(response) {
 
         // Render the homepage
         res.render('home', {
-          home,
+          pageContent,
           projects: response.results
         });
       });
-
     } else {
-      // If a home document is not returned, give an error
-      res.status(404).send('Not found');
+      res.status(404).send('Could not find a home document. Make sure you create and publish a home document in your repository.');
     }
   })
-);
+  .catch((error) => {
+    next(`error when retriving page ${error.message}`);
+  });
+});
 
 app.get('/project/:uid', (req, res, next) => {
   // We store the param uid in a variable

@@ -1,10 +1,13 @@
-//- Create template views/page.pug
 extends ./layout.pug
 
-//- Create a block
+block nav
+  a(href="/").back-link
+    span.back-link__pointer ☜
+    | Back to Projects
+
 block body
   div.row.center-xs
-    div(data-wio-id=pageContent.id).page-header.project-header.col-xs-12
+    div(data-wio-id=pageContent.id).page-header.project-header.col-xs-12.col-md-10
       p.project-header__tags #{pageContent.tags.join(' + ')}
       div.project-header__title-wrap
         h4.project-header__name
@@ -15,4 +18,10 @@ block body
       div.project-img
         img(src=pageContent.data.banner_image.url)
     div.project-body.col-xs-12.col-md-10.col-lg-8
-     != PrismicDOM.RichText.asHtml(pageContent.data.body, ctx.linkResolver)
+      != PrismicDOM.RichText.asHtml(pageContent.data.body, ctx.linkResolver)
+      if pageContent.data.related_resources
+        div.project-resources
+          each resource in pageContent.data.related_resources
+            div.project-resources__link
+              a(target="_blank" href=resource.url.url)= resource.link_title[0].text
+                span.project-resources__pointer ☞

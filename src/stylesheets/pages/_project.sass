@@ -1,12 +1,13 @@
 .project-header
   text-align: center
+  padding-bottom: ms(6)
 
 .project-header__tags
   color: $color-blue
   font-size: ms(-1)
+  line-height: ms(1)
   font-weight: 600
   text-transform: uppercase
-  margin-bottom: 0
   transition: color 0.3s
 
 .project-header__name,
@@ -23,3 +24,27 @@
 
 .project-img
   margin-bottom: ms(6)
+
+.project-body
+  .block-img
+    margin-top: ms(6)
+    margin-bottom: ms(6)
+    +desktop
+      margin-right: -100px
+      margin-left: -100px
+  .block-img + .block-img
+    margin-top: ms(6) * -1 + ms(1)
+
+.project-resources
+  margin-top: ms(3)
+
+.project-resources__link
+  margin-top: ms(-3)
+
+.project-resources__pointer
+  display: inline-block
+  position: relative
+  top: 2px
+  font-size: ms(2)
+  margin-left: ms(-4)
+  transform: rotate(-20deg)

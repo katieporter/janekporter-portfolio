@@ -1,13 +1,18 @@
-.project-tile:hover
-  cursor: pointer
-  .project-tile__img
-    opacity: 0.7
-  .project-tile__img-wrap:before
-      opacity: 0.025
-  .project-tile__name,
-  .project-tile__title,
-  .project-tile__tags
-    color: $color-blue-grey
+.project-tile__wrap
+  margin-bottom: ms(4) * -1
+
+.project-tile
+  margin-bottom: ms(4)
+  &:hover
+    cursor: pointer
+    .project-tile__img
+      opacity: 0.7
+    .project-tile__img-wrap:before
+        opacity: 0.025
+    .project-tile__name,
+    .project-tile__title,
+    .project-tile__tags
+      color: $color-blue-grey
 
 .project-tile__img-wrap
   display: block

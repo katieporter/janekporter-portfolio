@@ -1828,16 +1828,21 @@ a u {
     .page-header {
       padding: 34px 0; } }
 
-.project-tile:hover {
-  cursor: pointer; }
-  .project-tile:hover .project-tile__img {
-    opacity: 0.7; }
-  .project-tile:hover .project-tile__img-wrap:before {
-    opacity: 0.025; }
-  .project-tile:hover .project-tile__name,
-  .project-tile:hover .project-tile__title,
-  .project-tile:hover .project-tile__tags {
-    color: #B5BAC2; }
+.project-tile__wrap {
+  margin-bottom: -42px; }
+
+.project-tile {
+  margin-bottom: 42px; }
+  .project-tile:hover {
+    cursor: pointer; }
+    .project-tile:hover .project-tile__img {
+      opacity: 0.7; }
+    .project-tile:hover .project-tile__img-wrap:before {
+      opacity: 0.025; }
+    .project-tile:hover .project-tile__name,
+    .project-tile:hover .project-tile__title,
+    .project-tile:hover .project-tile__tags {
+      color: #B5BAC2; }
 
 .project-tile__img-wrap {
   display: block;

@@ -1835,10 +1835,8 @@ a u {
   margin-bottom: 42px; }
   .project-tile:hover {
     cursor: pointer; }
-    .project-tile:hover .project-tile__img {
-      opacity: 0.7; }
-    .project-tile:hover .project-tile__img-wrap:before {
-      opacity: 0.025; }
+    .project-tile:hover .project-tile__img-wrap {
+      opacity: 0.5; }
     .project-tile:hover .project-tile__name,
     .project-tile:hover .project-tile__title,
     .project-tile:hover .project-tile__tags {
@@ -1847,19 +1845,10 @@ a u {
 .project-tile__img-wrap {
   display: block;
   position: relative;
-  margin-bottom: 26px; }
-  .project-tile__img-wrap:before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: #000000;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s;
-    transition: opacity 0.3s; }
+  margin-bottom: 26px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s; }
 
 .project-tile__img {
   position: relative;

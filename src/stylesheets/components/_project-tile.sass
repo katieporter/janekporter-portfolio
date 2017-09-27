@@ -5,10 +5,8 @@
   margin-bottom: ms(4)
   &:hover
     cursor: pointer
-    .project-tile__img
-      opacity: 0.7
-    .project-tile__img-wrap:before
-        opacity: 0.025
+    .project-tile__img-wrap
+      opacity: 0.5
     .project-tile__name,
     .project-tile__title,
     .project-tile__tags
@@ -18,17 +16,8 @@
   display: block
   position: relative
   margin-bottom: ms(2)
-  &:before
-    content: ""
-    position: absolute
-    z-index: 1
-    top: 0
-    right: 0
-    bottom: 0
-    left: 0
-    background: $color-black
-    opacity: 0
-    transition: opacity 0.3s
+  opacity: 1
+  transition: opacity 0.3s
 
 .project-tile__img
   position: relative

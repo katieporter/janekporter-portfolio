@@ -49,7 +49,8 @@
         "modularscale-sass": "^3.0.3",
         "require-dir": "^0.3.2",
         "vinyl-source-stream": "^1.1.0",
-        "watchify": "^3.9.0"
+        "watchify": "^3.9.0",
+        "node-sass": "~6.0"
     },
     "engines": {
         "node": "15.x"

@@ -48,21 +48,35 @@ h6
   margin-top: ms(-1)
   margin-bottom: ms(-1)
 
-p
+p,
+ul,
+ol
   font-size: ms(1)
   line-height: ms(3)
   font-weight: 300
   margin-top: ms(-1)
   margin-bottom: ms(-1)
 
+ul,
+ol
+  margin-left: ms(3)
+
+li
+  margin-bottom: ms(-1)
+
 a,
 a u
   color: $color-blue
   text-decoration: none
+  border-radius: ms(-6)
   transition: color 0.3s
 
   &:hover
-    color: $color-blue-light-20
+     color: $color-blue-dark-40
+
+  &:focus
+    color: $color-blue-dark-40
+    outline: ms(-6) solid $color-blue-light-15
 
 .accent-text
   color: $color-blue

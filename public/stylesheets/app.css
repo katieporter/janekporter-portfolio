@@ -1675,9 +1675,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   line-height: 1; }
 
-ol, ul {
-  list-style: none; }
-
 blockquote, q {
   quotes: none; }
 
@@ -1747,22 +1744,36 @@ h6 {
   margin-top: 13px;
   margin-bottom: 13px; }
 
-p {
+p,
+ul,
+ol {
   font-size: 21px;
   line-height: 34px;
   font-weight: 300;
   margin-top: 13px;
   margin-bottom: 13px; }
 
+ul,
+ol {
+  margin-left: 34px; }
+
+li {
+  margin-bottom: 13px; }
+
 a,
 a u {
   color: #0063F6;
   text-decoration: none;
+  border-radius: 4px;
   -webkit-transition: color 0.3s;
   transition: color 0.3s; }
   a:hover,
   a u:hover {
-    color: #5d9eff; }
+    color: #00112a; }
+  a:focus,
+  a u:focus {
+    color: #00112a;
+    outline: 4px solid #448fff; }
 
 .accent-text {
   color: #0063F6; }
@@ -1791,7 +1802,7 @@ a u {
 .footer__item--link:hover {
   cursor: pointer; }
   .footer__item--link:hover a {
-    color: #B5BAC2; }
+    color: #0063F6; }
 
 .footer__item--social-wrap {
   margin-top: 21px; }
@@ -1833,14 +1844,16 @@ a u {
 
 .project-tile {
   margin-bottom: 42px; }
-  .project-tile:hover {
+  .project-tile:hover, .project-tile:focus {
     cursor: pointer; }
-    .project-tile:hover .project-tile__img-wrap {
+    .project-tile:hover .project-tile__img-wrap, .project-tile:focus .project-tile__img-wrap {
       opacity: 0.5; }
     .project-tile:hover .project-tile__name,
     .project-tile:hover .project-tile__title,
-    .project-tile:hover .project-tile__tags {
-      color: #B5BAC2; }
+    .project-tile:hover .project-tile__tags, .project-tile:focus .project-tile__name,
+    .project-tile:focus .project-tile__title,
+    .project-tile:focus .project-tile__tags {
+      color: #0063F6; }
 
 .project-tile__img-wrap {
   display: block;

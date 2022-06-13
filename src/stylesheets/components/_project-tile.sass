@@ -3,14 +3,15 @@
 
 .project-tile
   margin-bottom: ms(4)
-  &:hover
+  &:hover,
+  &:focus
     cursor: pointer
     .project-tile__img-wrap
       opacity: 0.5
     .project-tile__name,
     .project-tile__title,
     .project-tile__tags
-      color: $color-blue-grey
+      color: $color-blue
 
 .project-tile__img-wrap
   display: block

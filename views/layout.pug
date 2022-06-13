@@ -12,26 +12,17 @@ head
     = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
   script(src="//static.cdn.prismic.io/prismic.min.js")
   script(src="/javascript/vendors/highlight.min.js")
-  
+
 header.main-nav
   block nav
 
 body
   .wrapper.container-fluid.fade-in
     block body
-      
+
 footer
   div.row
     div.footer.col-xs-12
       div.footer__item.footer__item--link
         a(href="mailto:katie@janekporter.com") katie@janekporter.com
       div.footer__item.footer__item--copyright © Jane K Porter
-      div.footer__item.footer__item--social-wrap
-        a.footer__item--social-wrap__icon(href="https://dribbble.com/janekporter" target="_blank")
-          img(src="/images/icon-dribbble.svg")
-        a.footer__item--social-wrap__icon(href="https://twitter.com/janekporter" target="_blank")
-          img(src="/images/icon-twitter.svg")
-        a.footer__item--social-wrap__icon(href="https://instagram.com/janekporter" target="_blank")
-          img(src="/images/icon-instagram.svg")
-    
-      

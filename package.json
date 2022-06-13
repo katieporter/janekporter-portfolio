@@ -52,6 +52,6 @@
         "watchify": "^3.9.0"
     },
     "engines": {
-        "node": "14.x"
+        "node": "15.x"
     }
 }

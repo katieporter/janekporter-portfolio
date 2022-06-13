@@ -7,7 +7,7 @@ block body
         - var cleanTitle = PrismicDOM.RichText.asText(pageContent.data.title)
         h1= cleanTitle
           span.light-text
-            != PrismicDOM.RichText.asText(pageContent.data.bio_rich)
+            != PrismicDOM.RichText.asHtml(pageContent.data.bio_rich, null, htmlSerializer)
           span.accent-text .
   div.project-tile__wrap.row
     for project in projects

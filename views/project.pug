@@ -18,7 +18,7 @@ block body
       div.project-img
         img(src=pageContent.data.banner_image.url)
     div.project-body.col-xs-12.col-md-10.col-lg-8
-      != PrismicDOM.RichText.asHtml(pageContent.data.body, ctx.linkResolver)
+      != PrismicDOM.RichText.asHtml(pageContent.data.body, ctx.linkResolver, htmlSerializer)
       if pageContent.data.related_resources
         div.project-resources
           each resource in pageContent.data.related_resources
